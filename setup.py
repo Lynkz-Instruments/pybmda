@@ -11,7 +11,7 @@ setuptools.setup(
     description='Testing installation of Package',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/Lynkz-Instruments/pylynkz',
+    url='https://github.com/Lynkz-Instruments/pybmda',
     license='MIT',
     packages=['pybmda'],
     install_requires=[],

@@ -5,5 +5,11 @@ from pybmda import BMP, discover_bmps
 print("BMDA Version:", BMDA.version())
 print("BMP object", BMP("Serial"))
 print("List of connected BMPs:")
-for bmp in discover_bmps():
+bmplist = discover_bmps()
+for bmp in bmplist:
     print(bmp.serial)
+testbmp = BMP(bmplist[0].serial)
+print("Erasing target")
+testbmp.Erase(True)
+print("Flashing target")
+testbmp.Flash("test.bin", True, True)

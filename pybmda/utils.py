@@ -3,13 +3,12 @@
 import os
 import subprocess
 
-BMDA_BINARY = "blackmagic-bmda"
-WIN_EXE_SUFFIX = ".exe"
-
 import os
 
 if os.name == "nt":
-    BMDA_BINARY = BMDA_BINARY + WIN_EXE_SUFFIX
+    BMDA_BINARY = "blackmagic-bmda.exe"
+else:
+    BMDA_BINARY = "blackmagic-bmda"
 
 
 class BMDA:
@@ -31,11 +30,11 @@ class BMDA:
         return cls._version
 
     @classmethod
-    def exec(cls, args: list = None, description: bool = False) -> list:
+    def exec(cls, args: list = None) -> list:
         cmd = BMDA_BINARY.split(" ")
 
         if args is not None:
-            cmd += args.split()
+            cmd += args
 
         try:
             result = subprocess.run(cmd, capture_output=True, check=True)

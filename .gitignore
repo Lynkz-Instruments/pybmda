@@ -180,3 +180,8 @@ cython_debug/
 blackmagic-bmda
 blackmagic-bmda.exe
 ftd2xx.dll
+
+# Target binaries
+*.elf
+*.hex
+*.bin
