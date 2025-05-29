@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Lynkz Instruments Inc. Amos, Qc Canada
+
 """Utilities around bmda binary"""
 
 import os
