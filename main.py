@@ -1,3 +1,6 @@
+# Test application for pybmda
+# Copyright (c) 2025 Lynkz Instruments Inc. Amos, Qc Canada
+
 from pybmda.utils import BMDA
 from pybmda import BMP, discover_bmps
 

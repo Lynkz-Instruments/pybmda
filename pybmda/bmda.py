@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Lynkz Instruments Inc. Amos, Qc Canada
+
 """Representation classes and helper functions"""
 
 import re
