@@ -8,7 +8,7 @@ setuptools.setup(
     version='{{VERSION_PLACEHOLDER}}',
     author='Lynkz Instruments Inc',
     author_email='xavier@lynkz.ca',
-    description='Testing installation of Package',
+    description='Python interface for BlackMagicDebugApplication (BMDA)',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/Lynkz-Instruments/pybmda',
