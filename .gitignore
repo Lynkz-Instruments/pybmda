@@ -129,11 +129,14 @@ celerybeat.pid
 
 # Environments
 .env
+.menv
 .venv
 env/
+myenv/
 venv/
 ENV/
 env.bak/
+myenv.bak/
 venv.bak/
 
 # Spyder project settings
@@ -172,3 +175,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# BlackMagic BMDA executables
+blackmagic-bmda
+blackmagic-bmda.exe
+ftd2xx.dll
