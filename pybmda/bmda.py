@@ -42,12 +42,27 @@ class BMP:
         return
 
     def Erase(self, hwreset: bool = False) -> None:
+        """
+        Erase the target connected to the BMP
+
+        Arguments:
+            hwreset: Set True to use the hardware reset line
+        """
         args = ["-E"]
         args.extend(self._GetSerialArg())
         if hwreset:
             args.extend(["-C"])
 
         BMDA.exec(args=args)
+
+    """
+    Flash a bin file to a target device
+
+    Arguments:
+        filename: Path to the bin file to write to
+        verify: Set to True to perform a verify after the write
+        hwreset: Set to True to use the hardware reset line
+    """
 
     def Flash(self, filename: str, verify: bool = False, hwreset: bool = False) -> None:
         args = self._GetSerialArg()
