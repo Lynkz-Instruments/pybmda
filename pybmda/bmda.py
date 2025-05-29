@@ -17,7 +17,7 @@ def discover_bmps() -> List["BMP"]:
     bmps = []
 
     for line in BMDA.exec(args="-l"):
-        match = re.search(r'\b7f[a-fA-F0-9]+\b', line, re.IGNORECASE)
+        match = re.search(r"\b7f[a-fA-F0-9]+\b", line, re.IGNORECASE)
 
         if match:
             bmp = BMP(match.group(0))

@@ -8,8 +8,9 @@ WIN_EXE_SUFFIX = ".exe"
 
 import os
 
-if os.name == 'nt':
+if os.name == "nt":
     BMDA_BINARY = BMDA_BINARY + WIN_EXE_SUFFIX
+
 
 class BMDA:
     _version = None
