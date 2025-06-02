@@ -86,5 +86,12 @@ class BMP:
             args.extend([str(len)])
         BMDA.exec(args=args)
 
+    def Reset(self, hwreset: bool):
+        args = self._GetSerialArg()
+        args.extend(["-R"])
+        if hwreset:
+            args.extend(["h"])
+        BMDA.exec(args=args)
+
     def _GetSerialArg(self) -> list:
         return ["-s", f"{self.serial}"]
