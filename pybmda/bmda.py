@@ -68,7 +68,9 @@ class BMP:
         len: Set to the length to override the default length
     """
 
-    def Flash(self, filename: str, verify: bool = False, hwreset: bool = False, start: int = None, len: int = None) -> None:
+    def Flash(
+        self, filename: str, verify: bool = False, hwreset: bool = False, start: int = None, len: int = None
+    ) -> None:
         args = self._GetSerialArg()
         args.extend(["-w"])
         if verify:
