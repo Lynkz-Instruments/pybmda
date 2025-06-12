@@ -64,9 +64,13 @@ class BMP:
         filename: Path to the bin file to write to
         verify: Set to True to perform a verify after the write
         hwreset: Set to True to use the hardware reset line
+        start: Set to an address to start at a different address
+        len: Set to the length to override the default length
     """
 
-    def Flash(self, filename: str, verify: bool = False, hwreset: bool = False) -> None:
+    def Flash(
+        self, filename: str, verify: bool = False, hwreset: bool = False, start: int = None, len: int = None
+    ) -> None:
         args = self._GetSerialArg()
         args.extend(["-w"])
         if verify:
@@ -74,6 +78,19 @@ class BMP:
         args.extend([filename])
         if hwreset:
             args.extend(["-C"])
+        if start is not None:
+            args.extend(["-a"])
+            args.extend([hex(start)])
+        if len is not None:
+            args.extend(["-S"])
+            args.extend([str(len)])
+        BMDA.exec(args=args)
+
+    def Reset(self, hwreset: bool):
+        args = self._GetSerialArg()
+        args.extend(["-R"])
+        if hwreset:
+            args.extend(["h"])
         BMDA.exec(args=args)
 
     def _GetSerialArg(self) -> list:

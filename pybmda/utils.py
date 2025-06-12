@@ -8,9 +8,9 @@ import subprocess
 import os
 
 if os.name == "nt":
-    BMDA_BINARY = "blackmagic-bmda.exe"
+    BMDA_BINARY = "./blackmagic-bmda.exe"
 else:
-    BMDA_BINARY = "blackmagic-bmda"
+    BMDA_BINARY = "./blackmagic-bmda"
 
 
 class BMDA:
